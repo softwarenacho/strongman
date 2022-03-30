@@ -1,7 +1,12 @@
 module.exports = {
-  content: ['./pages/**/*.{tsx}', './components/**/*.{tsx}'],
+  content: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
-    extend: {},
+    maxWidth: {
+      logo: '8rem',
+    },
+    height: {
+      video: '32rem',
+    },
   },
   plugins: [],
 }
