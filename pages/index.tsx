@@ -33,7 +33,7 @@ const Home: NextPage = () => {
             {days + hours + minutes + seconds <= 0 ? (
               'Espera información del siguiente evento'
             ) : (
-              <p className="flex">
+              <p className="flex md:flex-col">
                 <span className="mr-1 md:mr-0">Inicia en</span>
                 <span>
                   {days}d {hours}h {minutes}m {seconds}s
@@ -72,28 +72,40 @@ const Home: NextPage = () => {
             alt="Quiero participar"
           />
         </section>
-        <section className="p-4">
+        <section className="p-4 flex flex-col justify-center items-center">
           <h3 className="text-strong-blue text-center font-bold mb-4">
             Premios
           </h3>
-          <div className="flex justify-around items-center">
-            <img className="w-22 h-32" src="/second.png" alt="Segundo" />
-            <img className="w-32 h-42" src="/first.png" alt="Primero" />
-            <img className="w-22 h-32" src="/third.png" alt="Tercero" />
+          <div className="flex justify-around items-center md:max-w-[40rem]">
+            <img
+              className="w-22 h-32 md:w-42 md:h-64"
+              src="/second.png"
+              alt="Segundo"
+            />
+            <img
+              className="w-32 h-42 md:w-56 md:h-80"
+              src="/first.png"
+              alt="Primero"
+            />
+            <img
+              className="w-22 h-32 md:w-42 md:h-64"
+              src="/third.png"
+              alt="Tercero"
+            />
           </div>
         </section>
-        <section className="bg-strong-blue px-4 py-8 border-4 border-strong-yellow">
+        <section className="bg-strong-blue px-4 py-8 border-4 border-strong-yellow flex flex-col justify-center items-center">
           <h3 className="text-strong-yellow text-center font-bold mb-8">
             Siguenos en nuestras redes sociales:
           </h3>
-          <div className="flex justify-around">
-            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+          <div className="flex justify-around items-center md:max-w-[40rem]">
+            <div className="flex justify-center items-center w-16 h-16 md:mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
               <img className="w-8 h-8" src="/facebook.png" alt="Facebook" />
             </div>
-            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+            <div className="flex justify-center items-center w-16 h-16 md:mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
               <img className="w-8 h-8" src="/instagram.png" alt="Instagram" />
             </div>
-            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+            <div className="flex justify-center items-center w-16 h-16 md:mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
               <img className="w-8 h-8" src="/tiktok.png" alt="Tik Tok" />
             </div>
             <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
@@ -101,23 +113,31 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section className="px-4 py-8">
+        <section className="px-4 py-8 flex flex-col justify-center items-center">
           <h3 className="text-strong-blue text-center font-bold mb-4">
             Patrocinadores
           </h3>
           <div className="flex justify-around">
-            <img className="w-20 h-20" src="/nonstop.jpeg" alt="Non Stop FC" />
             <img
-              className="w-20 h-20"
+              className="w-20 h-20 md:mr-4"
+              src="/nonstop.jpeg"
+              alt="Non Stop FC"
+            />
+            <img
+              className="w-20 h-20 md:mr-4"
               src="/volovanes.jpeg"
               alt="Volovanes Fitness"
             />
-            <img className="w-20 h-20" src="/boca.jpeg" alt="Boca del Rio" />
+            <img
+              className="w-20 h-20 md:mr-4"
+              src="/boca.jpeg"
+              alt="Boca del Rio"
+            />
           </div>
         </section>
       </main>
 
-      <footer className="p-4 flex justify-between bg-strong-blue border-t-4 border-strong-yellow">
+      <footer className="p-4 flex justify-between md:justify-around bg-strong-blue border-t-4 border-strong-yellow">
         <div className="flex flex-col">
           <img
             className="w-10 h-10 mb-1"
