@@ -1,11 +1,10 @@
 module.exports = {
   content: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
-    maxWidth: {
-      logo: '8rem',
-    },
-    height: {
-      video: '32rem',
+    colors: {
+      'strong-yellow': '#FEFF00',
+      'strong-blue': '#3166AF',
+      white: '#fff',
     },
   },
   plugins: [],

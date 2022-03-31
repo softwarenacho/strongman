@@ -17,40 +17,42 @@ const Home: NextPage = () => {
       </Head>
 
       <header>
-        <div className="p-4 border-b border-2 border-black flex justify-between">
+        <div className=" bg-strong-yellow p-2 md:p-4 border-b-4 border-strong-blue flex flex-col md:flex-row justify-center items-center md:justify-between">
           <img
             src="/letter_logo.png"
             alt="Strong Games Boca 2022"
-            className="max-w-logo"
+            className="max-w-[8rem] mb-2 sm:mb-0"
           />
-          <p>
-            <h2>Boca del Rio, Playa Punta Azul</h2>
-            <h3>20 de Abril de 2022</h3>
+          <p className="text-center">
+            <h2 className="font-black text-strong-blue">
+              Boca del Rio, Playa Punta Azul
+            </h2>
+            <h3 className="font-bold text-strong-blue">20 de Abril de 2022</h3>
           </p>
-          <div className="font-light max-w-logo text-right">
+          <div className="font-light max-w-logo text-center md:text-right">
             {days + hours + minutes + seconds <= 0 ? (
               'Espera información del siguiente evento'
             ) : (
-              <>
-                <p>Inicia en</p>
-                <p>
+              <p className="flex">
+                <span className="mr-1 md:mr-0">Inicia en</span>
+                <span>
                   {days}d {hours}h {minutes}m {seconds}s
-                </p>
-              </>
+                </span>
+              </p>
             )}
           </div>
         </div>
       </header>
 
       <main className="relative">
-        <section className="h-video overflow-hidden relative flex justify-center items-center">
+        <section className="h-[10rem] md:h-[32rem] overflow-hidden relative flex justify-center items-center border-b-4 border-strong-blue">
           <video
             id="background-video"
             autoPlay
             loop
             muted
             poster="https://assets.codepen.io/6093409/river.jpg"
-            className="w-full max-h-[32rem] object-cover absolute -z-10"
+            className="w-full max-h-[10rem] md:max-h-[32rem] object-cover absolute -z-10"
           >
             <source
               src="https://static.videezy.com/system/resources/previews/000/020/188/original/hanteln1.mp4"
@@ -63,13 +65,75 @@ const Home: NextPage = () => {
             alt="Logo Strong Games Boca 2022"
           />
         </section>
-        <section className="px-8 py-16 flex justify-center items-center">
-          <img className="w-3/5" src="/cta.png" alt="Quiero participar" />
+        <section className="py-4 md:px-8 md:py-16 flex justify-center items-center">
+          <img
+            className="w-3/5 cursor-pointer hover:shadow-lg"
+            src="/cta.png"
+            alt="Quiero participar"
+          />
         </section>
-        <section>Premios</section>
+        <section className="bg-strong-yellow p-4 border-t-4 border-strong-blue">
+          <h3 className="text-strong-blue text-center font-bold mb-4">
+            Premios
+          </h3>
+          <div className="flex justify-around">
+            <img className="w-22 h-32" src="/second.png" alt="Segundo" />
+            <img className="w-22 h-32" src="/first.png" alt="Primero" />
+            <img className="w-22 h-32" src="/third.png" alt="Tercero" />
+          </div>
+        </section>
+        <section className="bg-strong-blue p-4 border-4 border-strong-yellow">
+          <h3 className="text-strong-yellow text-center font-bold mb-4">
+            Siguenos en nuestras redes sociales:
+          </h3>
+          <div className="flex justify-around">
+            <img className="w-8 h-8" src="/facebook.png" alt="Facebook" />
+            <img className="w-8 h-8" src="/instagram.png" alt="Instagram" />
+            <img className="w-8 h-8" src="/tiktok.png" alt="Tik Tok" />
+            <img className="w-8 h-8" src="/youtube.png" alt="Youtube" />
+          </div>
+        </section>
+        <section className="bg-strong-yellow p-4">
+          <h3 className="text-strong-blue text-center font-bold mb-4">
+            Patrocinadores
+          </h3>
+          <div className="flex justify-around">
+            <img className="w-20 h-20" src="/nonstop.jpeg" alt="Non Stop FC" />
+            <img
+              className="w-20 h-20"
+              src="/volovanes.jpeg"
+              alt="Volovanes Fitness"
+            />
+            <img className="w-20 h-20" src="/boca.jpeg" alt="Boca del Rio" />
+          </div>
+        </section>
       </main>
 
-      <footer>Logo + Social + Links + CTA</footer>
+      <footer className="p-4 flex justify-between bg-strong-blue border-t-4 border-strong-yellow">
+        <div className="flex flex-col">
+          <img
+            className="w-10 h-10 mb-1"
+            src="/white_logo.png"
+            alt="Strong Games Boca"
+          />
+          <img
+            className="h-5 w-10"
+            src="/white_letter_logo.png"
+            alt="Strong Games Boca"
+          />
+        </div>
+        <div className="flex flex-col text-right">
+          <a className="text-sm text-white" href="">
+            Qué es Strong Games?
+          </a>
+          <a className="text-sm text-white" href="">
+            Dónde es Strong Games?
+          </a>
+          <a className="text-sm text-white" href="">
+            Cómo participar en Strong Games?
+          </a>
+        </div>
+      </footer>
     </>
   )
 }
