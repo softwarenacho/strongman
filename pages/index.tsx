@@ -65,35 +65,43 @@ const Home: NextPage = () => {
             alt="Logo Strong Games Boca 2022"
           />
         </section>
-        <section className="py-4 md:px-8 md:py-16 flex justify-center items-center">
+        <section className="py-8 px-4 md:px-8 md:py-16 flex justify-center items-center">
           <img
             className="w-3/5 cursor-pointer hover:shadow-lg"
             src="/cta.png"
             alt="Quiero participar"
           />
         </section>
-        <section className="bg-strong-yellow p-4 border-t-4 border-strong-blue">
+        <section className="p-4">
           <h3 className="text-strong-blue text-center font-bold mb-4">
             Premios
           </h3>
-          <div className="flex justify-around">
+          <div className="flex justify-around items-center">
             <img className="w-22 h-32" src="/second.png" alt="Segundo" />
-            <img className="w-22 h-32" src="/first.png" alt="Primero" />
+            <img className="w-32 h-42" src="/first.png" alt="Primero" />
             <img className="w-22 h-32" src="/third.png" alt="Tercero" />
           </div>
         </section>
-        <section className="bg-strong-blue p-4 border-4 border-strong-yellow">
-          <h3 className="text-strong-yellow text-center font-bold mb-4">
+        <section className="bg-strong-blue px-4 py-8 border-4 border-strong-yellow">
+          <h3 className="text-strong-yellow text-center font-bold mb-8">
             Siguenos en nuestras redes sociales:
           </h3>
           <div className="flex justify-around">
-            <img className="w-8 h-8" src="/facebook.png" alt="Facebook" />
-            <img className="w-8 h-8" src="/instagram.png" alt="Instagram" />
-            <img className="w-8 h-8" src="/tiktok.png" alt="Tik Tok" />
-            <img className="w-8 h-8" src="/youtube.png" alt="Youtube" />
+            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+              <img className="w-8 h-8" src="/facebook.png" alt="Facebook" />
+            </div>
+            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+              <img className="w-8 h-8" src="/instagram.png" alt="Instagram" />
+            </div>
+            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+              <img className="w-8 h-8" src="/tiktok.png" alt="Tik Tok" />
+            </div>
+            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+              <img className="w-8 h-8" src="/youtube.png" alt="Youtube" />
+            </div>
           </div>
         </section>
-        <section className="bg-strong-yellow p-4">
+        <section className="px-4 py-8">
           <h3 className="text-strong-blue text-center font-bold mb-4">
             Patrocinadores
           </h3>
@@ -123,13 +131,13 @@ const Home: NextPage = () => {
           />
         </div>
         <div className="flex flex-col text-right">
-          <a className="text-sm text-white" href="">
+          <a className="text-xs text-white" href="">
             Qué es Strong Games?
           </a>
-          <a className="text-sm text-white" href="">
+          <a className="text-xs text-white" href="">
             Dónde es Strong Games?
           </a>
-          <a className="text-sm text-white" href="">
+          <a className="text-xs text-white" href="">
             Cómo participar en Strong Games?
           </a>
         </div>
