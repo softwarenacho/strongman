@@ -1,8 +1,20 @@
 export const Sponsors = () => {
   const sponsors = [
-    { src: 'volovanes.jpeg', title: 'Volovanes Fitness', link: '/' },
-    { src: 'nonstop.jpeg', title: 'Non Stop FC', link: '/' },
-    { src: 'boca.jpeg', title: 'Gobierno de Boca del Rio', link: '/' },
+    {
+      src: 'volovanes.jpeg',
+      title: 'Volovanes Fitness',
+      link: 'https://www.facebook.com/volovanesfitness',
+    },
+    {
+      src: 'nonstop.jpeg',
+      title: 'Non Stop FC',
+      link: 'https://www.facebook.com/nonstop.fc',
+    },
+    {
+      src: 'boca.jpeg',
+      title: 'Gobierno de Boca del Rio',
+      link: 'https://www.bocadelrio.gob.mx/',
+    },
   ]
   return (
     <section className="px-4 py-8 flex flex-col justify-center items-center">
