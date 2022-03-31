@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useState } from 'react'
+import { SignUpModal } from '../components/sign_up_modal'
 import { useCountdown } from '../hooks/useCountdown'
 
 const Home: NextPage = () => {
   const [days, hours, minutes, seconds] = useCountdown('2022/04/16 12:01:00')
+  const [openSignUpModal, setSignUpOpen] = useState<boolean>(false)
 
   return (
     <>
@@ -23,12 +26,12 @@ const Home: NextPage = () => {
             alt="Strong Games Boca 2022"
             className="max-w-[8rem] mb-2 sm:mb-0"
           />
-          <p className="text-center">
+          <div className="text-center">
             <h2 className="font-black text-strong-blue">
               Boca del Rio, Playa Punta Azul
             </h2>
             <h3 className="font-bold text-strong-blue">20 de Abril de 2022</h3>
-          </p>
+          </div>
           <div className="font-light max-w-logo text-center md:text-right">
             {days + hours + minutes + seconds <= 0 ? (
               'Espera información del siguiente evento'
@@ -70,7 +73,9 @@ const Home: NextPage = () => {
             className="w-3/5 cursor-pointer hover:shadow-lg"
             src="/cta.png"
             alt="Quiero participar"
+            onClick={() => setSignUpOpen(true)}
           />
+          <SignUpModal open={openSignUpModal} setOpen={setSignUpOpen} />
         </section>
         <section className="p-4 flex flex-col justify-center items-center">
           <h3 className="text-strong-blue text-center font-bold mb-4">
@@ -96,20 +101,20 @@ const Home: NextPage = () => {
         </section>
         <section className="bg-strong-blue px-4 py-8 border-4 border-strong-yellow flex flex-col justify-center items-center">
           <h3 className="text-strong-yellow text-center font-bold mb-8">
-            Siguenos en nuestras redes sociales:
+            Siguenos en nuestras redes sociales
           </h3>
           <div className="flex justify-around items-center md:max-w-[40rem]">
-            <div className="flex justify-center items-center w-16 h-16 md:mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
-              <img className="w-8 h-8" src="/facebook.png" alt="Facebook" />
+            <div className="flex justify-center items-center w-16 h-16 mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+              <img className="w-8 h-8 " src="/facebook.png" alt="Facebook" />
             </div>
-            <div className="flex justify-center items-center w-16 h-16 md:mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
-              <img className="w-8 h-8" src="/instagram.png" alt="Instagram" />
+            <div className="flex justify-center items-center w-16 h-16 mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+              <img className="w-8 h-8 " src="/instagram.png" alt="Instagram" />
             </div>
-            <div className="flex justify-center items-center w-16 h-16 md:mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
-              <img className="w-8 h-8" src="/tiktok.png" alt="Tik Tok" />
+            <div className="flex justify-center items-center w-16 h-16 mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+              <img className="w-8 h-8 " src="/tiktok.png" alt="Tik Tok" />
             </div>
             <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
-              <img className="w-8 h-8" src="/youtube.png" alt="Youtube" />
+              <img className="w-8 h-8 " src="/youtube.png" alt="Youtube" />
             </div>
           </div>
         </section>
