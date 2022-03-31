@@ -83,17 +83,17 @@ const Home: NextPage = () => {
           </h3>
           <div className="flex justify-around items-center md:max-w-[40rem]">
             <img
-              className="w-22 h-32 md:w-42 md:h-64"
+              className="w-20 h-30 md:w-42 md:h-64"
               src="/second.png"
               alt="Segundo"
             />
             <img
-              className="w-32 h-42 md:w-56 md:h-80"
+              className="w-30 h-40 md:w-56 md:h-80"
               src="/first.png"
               alt="Primero"
             />
             <img
-              className="w-22 h-32 md:w-42 md:h-64"
+              className="w-20 h-30 md:w-42 md:h-64"
               src="/third.png"
               alt="Tercero"
             />
@@ -104,16 +104,16 @@ const Home: NextPage = () => {
             Siguenos en nuestras redes sociales
           </h3>
           <div className="flex justify-around items-center md:max-w-[40rem]">
-            <div className="flex justify-center items-center w-16 h-16 mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+            <div className="flex justify-center items-center w-16 h-16 mr-2 md:mr-4 rounded-full bg-strong-yellow hover:bg-white transition-colors shadow cursor-pointer hover:shadow-xl">
               <img className="w-8 h-8 " src="/facebook.png" alt="Facebook" />
             </div>
-            <div className="flex justify-center items-center w-16 h-16 mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+            <div className="flex justify-center items-center w-16 h-16 mr-2 md:mr-4 rounded-full bg-strong-yellow hover:bg-white transition-colors shadow cursor-pointer hover:shadow-xl">
               <img className="w-8 h-8 " src="/instagram.png" alt="Instagram" />
             </div>
-            <div className="flex justify-center items-center w-16 h-16 mr-4 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+            <div className="flex justify-center items-center w-16 h-16 mr-2 md:mr-4 rounded-full bg-strong-yellow hover:bg-white transition-colors shadow cursor-pointer hover:shadow-xl">
               <img className="w-8 h-8 " src="/tiktok.png" alt="Tik Tok" />
             </div>
-            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow shadow cursor-pointer hover:shadow-xl">
+            <div className="flex justify-center items-center w-16 h-16 rounded-full bg-strong-yellow hover:bg-white transition-colors shadow cursor-pointer hover:shadow-xl">
               <img className="w-8 h-8 " src="/youtube.png" alt="Youtube" />
             </div>
           </div>
@@ -142,7 +142,7 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <footer className="p-4 flex justify-between md:justify-around bg-strong-blue border-t-4 border-strong-yellow">
+      <footer className="p-4 flex items-center justify-between md:justify-around bg-strong-blue border-t-4 border-strong-yellow">
         <div className="flex flex-col">
           <img
             className="w-10 h-10 mb-1"
