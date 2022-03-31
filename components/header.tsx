@@ -1,7 +1,7 @@
 import { useCountdown } from '../hooks/useCountdown'
 
 export const Header = () => {
-  const [days, hours, minutes, seconds] = useCountdown('2022/04/16 12:01:00')
+  const [days, hours, minutes, seconds] = useCountdown('2022/04/20 12:01:00')
   return (
     <header>
       <div className=" bg-strong-yellow p-2 md:p-4 border-b-4 border-strong-blue flex flex-col md:flex-row justify-center items-center md:justify-between">
