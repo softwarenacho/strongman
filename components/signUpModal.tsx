@@ -8,6 +8,7 @@ type SignUpModalProps = {
 export const SignUpModal = ({ open, setOpen }: SignUpModalProps) => {
   const handleSubmit = (data: any) => {
     console.log('submit', data)
+    setOpen(false)
   }
   return open ? (
     <div className="fixed z-20 inset-0 overflow-y-auto">
