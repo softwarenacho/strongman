@@ -25,6 +25,7 @@ export const Sponsors = () => {
         {sponsors.map(sponsor => (
           <a
             href={sponsor.link}
+            key={sponsor.title}
             className="flex flex-col justify-center items-center text-strong-blue font-bold text-center mr-4 last:mr-0"
           >
             <img

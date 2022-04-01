@@ -1,6 +1,6 @@
 export const VideoCover = () => {
   return (
-    <section className="h-[10rem] sm:h-[16rem] md:h-[32rem] bg-strong-blue overflow-hidden relative flex justify-center items-center border-b-4 border-strong-yellow">
+    <section className="h-[10rem] sm:h-[16rem] md:h-[32rem] bg-strong-blue overflow-hidden relative flex justify-center items-center border-b-4 border-strong-blue">
       <video
         id="background-video"
         autoPlay

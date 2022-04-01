@@ -18,6 +18,7 @@ export const Prizes = () => {
             className={`${prize.class} sm:mr-4`}
             src={`/prizes/${prize.src}`}
             alt={prize.alt}
+            key={prize.alt}
           />
         ))}
       </div>

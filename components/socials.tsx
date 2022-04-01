@@ -21,6 +21,7 @@ export const Socials = () => {
         {socialNetworks.map(social => (
           <a
             href={social.url}
+            key={social.url}
             className="flex justify-center items-center w-14 h-14 sm:w-24 sm:h-24 md:w-32 md:h-32 mr-2 md:mr-4 last:mr-0 rounded-full hover:bg-strong-blue hover:border-2 hover:border-strong-yellow bg-strong-yellow transition-colors shadow cursor-pointer hover:shadow-xl"
           >
             <img

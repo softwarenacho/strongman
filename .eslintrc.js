@@ -12,11 +12,12 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react-hooks', 'prettier'],
+  plugins: ['react-hooks', 'prettier', 'tailwindcss'],
   extends: [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:tailwindcss/recommended',
   ],
   rules: {
     'prettier/prettier': 'error',
