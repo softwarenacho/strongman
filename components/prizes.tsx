@@ -8,10 +8,7 @@ export const Prizes = () => {
   ]
 
   return (
-    <section className="bg-strong-yellow px-4 py-8 flex flex-col justify-center items-center border-t-4 border-strong-blue">
-      <span className="text-strong-blue text-4xl text-center font-bold mb-4">
-        Premios
-      </span>
+    <section className="bg-black px-4 pb-8 pt-4 flex flex-col justify-center items-center">
       <div className="flex justify-around items-center md:max-w-[40rem] mb-4">
         {prizes.map(prize => (
           <img

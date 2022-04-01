@@ -17,8 +17,8 @@ export const Sponsors = () => {
     },
   ]
   return (
-    <section className="px-4 py-8 flex flex-col justify-center items-center">
-      <h3 className="text-strong-blue text-center font-bold mb-16 text-xl sm:text-2xl md:text-4xl">
+    <section className="px-4 py-8 pt-0 flex flex-col justify-center items-center bg-black">
+      <h3 className="text-white text-center font-bold mb-16 text-xl sm:text-2xl md:text-4xl">
         Patrocinadores
       </h3>
       <div className="flex justify-around">

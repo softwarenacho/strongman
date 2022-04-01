@@ -1,12 +1,6 @@
 import { useForm } from 'react-hook-form'
 
-export const SignUpForm = ({
-  competitor,
-  onSubmit,
-}: {
-  competitor: boolean
-  onSubmit: (data: any) => void
-}) => {
+export const SignUpForm = ({ competitor }: { competitor: boolean }) => {
   const {
     register,
     handleSubmit,
@@ -17,6 +11,20 @@ export const SignUpForm = ({
   const mandatoryField = (
     <span className="w-full text-red-600">Este campo es obligatorio</span>
   )
+
+  const onSubmit = async (data: any) => {
+    console.log('data', data)
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    }
+    const response = await fetch('http://localhost:3001/users', options)
+    console.log(
+      '🚀 ~ file: signUpForm.tsx ~ line 23 ~ onSubmit ~ response',
+      response.json(),
+    )
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mb-8">

@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         <Sponsors />
       </main>
 
-      <footer className="p-4 flex items-center justify-between md:justify-around bg-strong-blue border-t-4 border-strong-yellow">
+      <footer className="p-4 flex items-center justify-between md:justify-around bg-black border-t-4 border-strong-blue">
         <div className="flex flex-col">
           <img
             className="w-10 h-10 mb-1"
