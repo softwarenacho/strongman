@@ -28,19 +28,21 @@ const Admin: NextPage = () => {
     return (
       <table>
         <thead>
-          <th>ID</th>
-          <th>Volovanes Fitness?</th>
-          <th>Nombre</th>
-          <th>Telefono</th>
-          <th>CP</th>
-          <th>Colonia</th>
-          <th>Participante?</th>
-          <th>Gimnasio</th>
-          <th>Peso</th>
-          <th>Altura</th>
-          <th>Medio</th>
-          <th>Social</th>
-          <th>Creado</th>
+          <tr>
+            <th>ID</th>
+            <th>Volovanes Fitness?</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>CP</th>
+            <th>Colonia</th>
+            <th>Participante?</th>
+            <th>Gimnasio</th>
+            <th>Peso</th>
+            <th>Altura</th>
+            <th>Medio</th>
+            <th>Social</th>
+            <th>Creado</th>
+          </tr>
         </thead>
         <tbody>
           {users.map((user: any) => (

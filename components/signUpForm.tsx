@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -9,6 +10,8 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
     watch,
     formState: { errors },
   } = useForm()
+
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const mandatoryField = (
     <span className="w-full text-red-600">Este campo es obligatorio</span>
@@ -39,22 +42,36 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     }
-    try {
-      const endpoint = window.location.href.includes('localhost')
-        ? 'http://localhost:3001/users'
-        : 'https://strongames-api.herokuapp.com/users'
-      const rawResponse = await fetch(endpoint, options)
-      const response = await rawResponse.json()
-      if (response?.status === 200) {
-        toast.success(SuccessMsg(response?.message), {
-          position: 'bottom-center',
-          autoClose: 2500,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-        })
-      } else {
-        toast.error(ErrorMsg(response?.messages), {
+    if (!isLoading) {
+      setIsLoading(true)
+      try {
+        const endpoint = window.location.href.includes('localhost')
+          ? 'http://localhost:3001/users'
+          : 'https://strongames-api.herokuapp.com/users'
+        const rawResponse = await fetch(endpoint, options)
+        const response = await rawResponse.json()
+        if (response?.status === 200) {
+          setIsLoading(false)
+          toast.success(SuccessMsg(response?.message), {
+            position: 'bottom-center',
+            autoClose: 2500,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+          })
+        } else {
+          setIsLoading(false)
+          toast.error(ErrorMsg(response?.messages), {
+            position: 'bottom-center',
+            autoClose: 2500,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+          })
+        }
+      } catch (e) {
+        setIsLoading(false)
+        toast.error('Error en la aplicación', {
           position: 'bottom-center',
           autoClose: 2500,
           hideProgressBar: true,
@@ -62,14 +79,6 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
           pauseOnHover: true,
         })
       }
-    } catch (e) {
-      toast.error('Error en la aplicación', {
-        position: 'bottom-center',
-        autoClose: 2500,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-      })
     }
   }
 
@@ -214,9 +223,13 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
         </div>
         <input
           type="submit"
-          value="REGISTRARME"
-          className="w-full mt-4 inline-flex justify-center rounded-lg shadow hover:shadow-lg border-4 border-strong-blue px-8 py-4 bg-strong-yellow font-black text-xl text-strong-blue hover:text-white hover:bg-strong-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-strong-yellow md:w-auto"
-          onClick={() => console.log}
+          value={isLoading ? 'Enviando...' : 'Registrarme'}
+          disabled={isLoading}
+          className={`w-full mt-4 inline-flex justify-center rounded-lg shadow hover:shadow-lg border-4 border-strong-blue px-8 py-4 ${
+            isLoading
+              ? 'bg-strong-blue text-white cursor-wait'
+              : 'bg-strong-yellow text-strong-blue cursor-pointer'
+          } font-black text-xl  hover:text-white hover:bg-strong-blue focus:outline-none md:w-auto`}
         />
       </form>
       <ToastContainer />
