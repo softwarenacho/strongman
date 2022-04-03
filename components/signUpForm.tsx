@@ -62,7 +62,6 @@ export const SignUpForm = ({ setOpen }: { setOpen: any }) => {
           toast.success(SuccessMsg(response?.message), {
             position: 'bottom-center',
             autoClose: 2500,
-            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
           })
@@ -73,7 +72,6 @@ export const SignUpForm = ({ setOpen }: { setOpen: any }) => {
           toast.error(ErrorMsg(response?.messages), {
             position: 'bottom-center',
             autoClose: 2500,
-            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
           })
