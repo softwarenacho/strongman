@@ -24,46 +24,79 @@ const Admin: NextPage = () => {
     }
   }
 
+  const formatDate = (date: string) => {
+    const newDate = new Date(date)
+    return `${newDate.getDate()}-${newDate.getMonth()}-${newDate.getFullYear()}`
+  }
+
   const UsersTable = (users: any) => {
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Volovanes Fitness?</th>
-            <th>Nombre</th>
-            <th>Telefono</th>
-            <th>CP</th>
-            <th>Colonia</th>
-            <th>Participante?</th>
-            <th>Gimnasio</th>
-            <th>Peso</th>
-            <th>Altura</th>
-            <th>Medio</th>
-            <th>Social</th>
-            <th>Creado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user: any) => (
-            <tr key={user.phone}>
-              <td>{user.id}</td>
-              <td>{user.volovanTried}</td>
-              <td>{user.name}</td>
-              <td>{user.phone}</td>
-              <td>{user.zip}</td>
-              <td>{user.neighborhood}</td>
-              <td>{user.participant}</td>
-              <td>{user.gym}</td>
-              <td>{user.weight}</td>
-              <td>{user.height}</td>
-              <td>{user.medium}</td>
-              <td>{user.social}</td>
-              <td>{user.created_at}</td>
+      <div className="w-full overflow-scroll p-4 md:p-8 flex flex-col">
+        <h1 className="font-bold text-2xl text-strong-blue mb-8">
+          Usuarios registrados:
+        </h1>
+        <table className="border-2 border-strong-blue">
+          <thead className="p-2 border-b-2 border-strong-blue">
+            <tr>
+              <th className="p-2 border-r-2 border-strong-blue ">ID</th>
+              <th className="p-2 border-r-2 border-strong-blue ">
+                ¿Volovanes Fitness?
+              </th>
+              <th className="p-2 border-r-2 border-strong-blue ">Nombre</th>
+              <th className="p-2 border-r-2 border-strong-blue ">Telefono</th>
+              <th className="p-2 border-r-2 border-strong-blue ">CP</th>
+              <th className="p-2 border-r-2 border-strong-blue ">Colonia</th>
+              <th className="p-2 border-r-2 border-strong-blue ">
+                ¿Participante?
+              </th>
+              <th className="p-2 border-r-2 border-strong-blue ">Gimnasio</th>
+              <th className="p-2 border-r-2 border-strong-blue ">Peso</th>
+              <th className="p-2 border-r-2 border-strong-blue ">Altura</th>
+              <th className="p-2 border-r-2 border-strong-blue ">Medio</th>
+              <th className="p-2 border-r-2 border-strong-blue ">Social</th>
+              <th className="p-2 border-r-2 border-strong-blue ">Creado</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user: any, index: number) => (
+              <tr
+                key={`${user.phone}-${index}`}
+                className={`text-center border-b-2 ${
+                  index % 2 === 0 && 'bg-gray-300'
+                }`}
+              >
+                <td className="p-2">{user.id}</td>
+                <td
+                  className={`p-2 ${
+                    user.volovanTried ? 'text-strong-blue' : 'text-red-600'
+                  }`}
+                >
+                  {user.volovanTried ? 'sí' : 'no'}
+                </td>
+                <td className="p-2">{user.name}</td>
+                <td className="p-2">{user.phone}</td>
+                <td className="p-2">{user.zip}</td>
+                <td className="p-2">{user.neighborhood}</td>
+                <td
+                  className={`p-2 ${
+                    user.volovanTried ? 'text-strong-blue' : 'text-red-600'
+                  }`}
+                >
+                  {user.participant ? 'sí' : 'no'}
+                </td>
+                <td className="p-2">{user.gym}</td>
+                <td className="p-2">{user.weight}</td>
+                <td className="p-2">{user.height}</td>
+                <td className="p-2">{user.medium}</td>
+                <td className="p-2">{user.social}</td>
+                <td className="p-2 min-w-[7rem]">
+                  {formatDate(user.created_at)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     )
   }
 
