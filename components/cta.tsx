@@ -8,7 +8,7 @@ export const CTA = () => {
       <p className="text-white md:text-xl font-bold pb-4">
         StronGames Boca 2022
       </p>
-      <p className="text-white text-xs md:text-base pb-4">
+      <p className="text-white text-xs md:text-base text-center pb-4">
         Es la primer competencia abierta al público para poner a prueba la
         fuerza máxima de cada atleta basada en 3 ejercicios fundamentales para
         el levantamiento de potencia
@@ -18,8 +18,8 @@ export const CTA = () => {
       <p className="text-white text-xs pb-8">- Press de pecho en banco plano</p>
 
       <button
-        className="w-full mt-4 inline-flex justify-center rounded-lg shadow hover:shadow-lg border-4 border-strong-yellow px-8 py-4 bg-strong-blue font-black text-xl text-strong-yellow  hover:bg-strong-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-strong-yellow md:w-auto"
-        onClick={() => console.log}
+        className="w-full mt-4 mb-8 inline-flex justify-center rounded-lg shadow hover:shadow-lg border-2 md:border-4 border-strong-yellow px-8 py-4 bg-strong-blue font-black text-xl text-strong-yellow  hover:bg-strong-blue focus:outline-none md:w-auto"
+        onClick={() => setSignUpOpen(true)}
       >
         Quiero Participar
       </button>

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { SignUpForm } from './signUpForm'
 
 type SignUpModalProps = {
@@ -6,6 +7,8 @@ type SignUpModalProps = {
 }
 
 export const SignUpModal = ({ open, setOpen }: SignUpModalProps) => {
+  const [isParticipant, setIsParticipant] = useState<boolean>(true)
+
   return open ? (
     <div className="fixed z-20 inset-0 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -19,20 +22,45 @@ export const SignUpModal = ({ open, setOpen }: SignUpModalProps) => {
 
         <div className="relative bg-white inline-block align-bottom border-4 border-strong-blue rounded-lg text-left overflow-hidden transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
           <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <div className="sm:flex sm:items-start">
-              <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10">
-                <img src="/logos/blue.png" />
+            <div
+              onClick={() => setOpen(false)}
+              className="absolute top-2 cursor-pointer right-2 flex justify-center font-bold items-center"
+            >
+              <img className="w-6 h-6" src="/close.png" alt="Close" />
+            </div>
+            <div className="sm:flex sm:items-start mt-8">
+              <div className="mx-auto flex-shrink-0 flex items-center justify-center rounded-full sm:mx-0 sm:h-16 sm:w-16">
+                <img className="h-16 w-16" src="/logos/blue.png" />
               </div>
-              <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                <h3 className="text-lg text-strong-blue leading-6 font-black">
-                  Registrate a StronGames Boca 2022
+              <div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3 className="text-lg mt-2 text-strong-blue leading-6 font-black">
+                  Registrate ahora a StronGames Boca 2022
                 </h3>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    Participante / Expectador
-                  </p>
-                  <SignUpForm competitor={true} />
-                </div>
+                <>
+                  <div className="w-full py-8 text-strong-blue text-center">
+                    <span
+                      onClick={() => setIsParticipant(true)}
+                      className={`w-1/2 py-4 px-4 sm:px-8 cursor-pointer border-strong-blue ${
+                        isParticipant
+                          ? 'border-2 border-strong-blue  border-b-0 font-bold'
+                          : 'border-b-2 border-gray-200 text-gray-400'
+                      } `}
+                    >
+                      Participante
+                    </span>
+                    <span
+                      onClick={() => setIsParticipant(false)}
+                      className={`w-1/2 py-4 px-4 sm:px-8 cursor-pointer  ${
+                        !isParticipant
+                          ? 'border-2 border-strong-blue border-b-0 font-bold'
+                          : 'border-b-2 border-gray-200 text-gray-400'
+                      } `}
+                    >
+                      Espectador
+                    </span>
+                  </div>
+                  <SignUpForm isParticipant={isParticipant} />
+                </>
               </div>
             </div>
           </div>
