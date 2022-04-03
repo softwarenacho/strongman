@@ -5,8 +5,8 @@ export const Socials = () => {
       url: 'https://www.facebook.com/Strongamesmx-104540758887055',
     },
     { src: 'instagram', url: 'https://www.instagram.com/strongamesmx/' },
-    { src: 'tiktok', url: '' },
-    { src: 'twitter', url: 'https://twitter.com/CanaCovarrubias' },
+    // { src: 'tiktok', url: '' },
+    // { src: 'twitter', url: 'https://twitter.com/CanaCovarrubias' },
     {
       src: 'youtube',
       url: 'https://www.youtube.com/channel/UC4Kmv9rzQEvDa0A3jQz3_2g',
