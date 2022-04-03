@@ -5,11 +5,13 @@ export const Header = () => {
   return (
     <header>
       <div className=" bg-black p-2 md:p-4 border-b-4 border-strong-blue flex flex-col md:flex-row justify-center items-center md:justify-between">
-        <img
-          src="/logos/letter_white.png"
-          alt="Strong Games Boca 2022"
-          className="max-w-[8rem] mb-2 md:mb-0"
-        />
+        <a href="/">
+          <img
+            src="/logos/letter_white.png"
+            alt="Strong Games Boca 2022"
+            className="max-w-[8rem] mb-2 md:mb-0"
+          />
+        </a>
         <div className="text-center mt-2 md:mt-0">
           <h2 className="font-black text-lg md:text-xl text-strong-blue">
             Boca del Rio, Playa Punta Azul
