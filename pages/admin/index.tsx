@@ -19,7 +19,7 @@ const Admin: NextPage = () => {
 
   const checkPassword = (data: any) => {
     const pwd = data.target.value
-    if (pwd === '066669') {
+    if (pwd === '6929') {
       setAuth(true)
     }
   }
