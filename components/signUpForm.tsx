@@ -121,7 +121,7 @@ export const SignUpForm = ({ setOpen }: { setOpen: any }) => {
         </div>
         <div className="flex flex-col flex-wrap justify-center items-center px-0 py-2">
           <span className="text-lg text-strong-blue font-bold">
-            ¿Haz probado?
+            ¿Has probado?
           </span>
           <img className="w-32 h-32" src="/sponsors/volovanes.jpeg" />
           <div className="w-full flex justify-around">
