@@ -121,10 +121,11 @@ export const SignUpForm = ({ setOpen }: { setOpen: any }) => {
             {...register('participant')}
           />
         </div>
-        <div className="flex flex-col flex-wrap justify-around px-0 py-2">
+        <div className="flex flex-col flex-wrap justify-center items-center px-0 py-2">
           <span className="text-lg text-strong-blue font-bold">
-            Haz probado los Volovanes Fitness?
+            ¿Haz probado?
           </span>
+          <img className="w-32 h-32" src="/sponsors/volovanes.jpeg" />
           <div className="w-full flex justify-around">
             <label className="px-0 py-2 font-bold text-lg mr-4">
               Sí
@@ -244,7 +245,7 @@ export const SignUpForm = ({ setOpen }: { setOpen: any }) => {
           </label>
           <label className="flex flex-col px-0 py-2 mb-4">
             <span className="text-lg text-strong-blue font-bold mb-4">
-              Cómo te enteraste de StrongMan Boca 2022?
+              ¿Cómo te enteraste de StrongMan Boca 2022?
             </span>
             <textarea
               className="border-2 border-strong-blue"

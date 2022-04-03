@@ -44,13 +44,13 @@ const Home: NextPage = () => {
         </div>
         <div className="flex flex-col text-right">
           <a className="text-xs text-white" href="">
-            Qué es Strong Games?
+            ¿Qué es Strong Games?
           </a>
           <a className="text-xs text-white" href="">
-            Dónde es Strong Games?
+            ¿Dónde es Strong Games?
           </a>
           <a className="text-xs text-white" href="">
-            Cómo participar en Strong Games?
+            ¿Cómo participar en Strong Games?
           </a>
         </div>
       </footer> */}
