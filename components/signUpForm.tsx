@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
+export const SignUpForm = () => {
   const {
     register,
     handleSubmit,
@@ -12,6 +12,7 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
   } = useForm()
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isParticipant, setIsParticipant] = useState<boolean>(true)
 
   const mandatoryField = (
     <span className="w-full text-red-600">Este campo es obligatorio</span>
@@ -37,6 +38,8 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
   }
 
   const onSubmit = async (data: any) => {
+    data.participant = data.participant === 'yes'
+    data.volovanTried = data.volovanTried === 'yes'
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -85,12 +88,34 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="mb-8">
-        <div className="flex flex-col flex-wrap justify-around px-0 py-2">
+        <div className="w-full py-8 text-strong-blue text-center">
+          <span
+            onClick={() => setIsParticipant(true)}
+            className={`w-1/2 py-4 px-4 sm:px-8 cursor-pointer border-strong-blue ${
+              isParticipant
+                ? 'border-2 border-strong-blue  border-b-0 font-bold'
+                : 'border-b-2 border-gray-200 text-gray-400'
+            } `}
+          >
+            Participante
+          </span>
+          <span
+            onClick={() => setIsParticipant(false)}
+            className={`w-1/2 py-4 px-4 sm:px-8 cursor-pointer  ${
+              !isParticipant
+                ? 'border-2 border-strong-blue border-b-0 font-bold'
+                : 'border-b-2 border-gray-200 text-gray-400'
+            } `}
+          >
+            Espectador
+          </span>
           <input
             type="hidden"
-            value={isParticipant.toString()}
+            value={isParticipant ? 'yes' : 'no'}
             {...register('participant')}
           />
+        </div>
+        <div className="flex flex-col flex-wrap justify-around px-0 py-2">
           <span className="text-lg text-strong-blue font-bold">
             Haz probado los Volovanes Fitness?
           </span>

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { SignUpForm } from './signUpForm'
 
 type SignUpModalProps = {
@@ -7,8 +6,6 @@ type SignUpModalProps = {
 }
 
 export const SignUpModal = ({ open, setOpen }: SignUpModalProps) => {
-  const [isParticipant, setIsParticipant] = useState<boolean>(true)
-
   return open ? (
     <div className="fixed z-20 inset-0 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -37,29 +34,7 @@ export const SignUpModal = ({ open, setOpen }: SignUpModalProps) => {
                   Registrate ahora a StronGames Boca 2022
                 </h3>
                 <>
-                  <div className="w-full py-8 text-strong-blue text-center">
-                    <span
-                      onClick={() => setIsParticipant(true)}
-                      className={`w-1/2 py-4 px-4 sm:px-8 cursor-pointer border-strong-blue ${
-                        isParticipant
-                          ? 'border-2 border-strong-blue  border-b-0 font-bold'
-                          : 'border-b-2 border-gray-200 text-gray-400'
-                      } `}
-                    >
-                      Participante
-                    </span>
-                    <span
-                      onClick={() => setIsParticipant(false)}
-                      className={`w-1/2 py-4 px-4 sm:px-8 cursor-pointer  ${
-                        !isParticipant
-                          ? 'border-2 border-strong-blue border-b-0 font-bold'
-                          : 'border-b-2 border-gray-200 text-gray-400'
-                      } `}
-                    >
-                      Espectador
-                    </span>
-                  </div>
-                  <SignUpForm isParticipant={isParticipant} />
+                  <SignUpForm />
                 </>
               </div>
             </div>
