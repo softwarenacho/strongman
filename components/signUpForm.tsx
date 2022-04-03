@@ -14,21 +14,9 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
     <span className="w-full text-red-600">Este campo es obligatorio</span>
   )
 
-  const ErrorMsg = ({
-    closeToast,
-    messages,
-  }: {
-    closeToast: any
-    messages: any
-  }) => {
+  const ErrorMsg = (messages: any) => {
     return (
       <div>
-        <div
-          onClick={closeToast}
-          className="absolute top-2 cursor-pointer right-2 flex justify-center font-bold items-center"
-        >
-          <img className="w-4 h-4" src="/close.png" alt="Close" />
-        </div>
         <p className="font-bold text-red-600">Error al guardar tu registro.</p>
         {Object.keys(messages).map(key => (
           <p className="text-sm">{messages[key]}</p>
@@ -37,21 +25,9 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
     )
   }
 
-  const SuccessMsg = ({
-    closeToast,
-    message,
-  }: {
-    closeToast: any
-    message: string
-  }) => {
+  const SuccessMsg = (message: string) => {
     return (
       <div>
-        <div
-          onClick={closeToast}
-          className="absolute top-2 cursor-pointer right-2 flex justify-center font-bold items-center"
-        >
-          <img className="w-4 h-4" src="/close.png" alt="Close" />
-        </div>
         <p className="font-bold text-strong-blue text-sm">{message}</p>
       </div>
     )
@@ -63,32 +39,37 @@ export const SignUpForm = ({ isParticipant }: { isParticipant: boolean }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     }
-    const rawResponse = await fetch('http://localhost:3001/users', options)
-    const response = await rawResponse.json()
-    if (response?.status === 200) {
-      toast.success(
-        ({ closeToast }) =>
-          SuccessMsg({ closeToast, message: response?.message }),
-        {
+    try {
+      const endpoint = window.location.href.includes('localhost')
+        ? 'http://localhost:3001/users'
+        : 'https://strongames-api.herokuapp.com/users'
+      const rawResponse = await fetch(endpoint, options)
+      const response = await rawResponse.json()
+      if (response?.status === 200) {
+        toast.success(SuccessMsg(response?.message), {
           position: 'bottom-center',
           autoClose: 2500,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
-        },
-      )
-    } else {
-      toast.error(
-        ({ closeToast }) =>
-          ErrorMsg({ closeToast, messages: response?.messages }),
-        {
+        })
+      } else {
+        toast.error(ErrorMsg(response?.messages), {
           position: 'bottom-center',
           autoClose: 2500,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
-        },
-      )
+        })
+      }
+    } catch (e) {
+      toast.error('Error en la aplicación', {
+        position: 'bottom-center',
+        autoClose: 2500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+      })
     }
   }
 
