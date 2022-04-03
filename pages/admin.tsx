@@ -51,7 +51,7 @@ const Admin: NextPage = () => {
               <td>{user.phone}</td>
               <td>{user.zip}</td>
               <td>{user.neighborhood}</td>
-              <td>{user.isParticipant}</td>
+              <td>{user.participant}</td>
               <td>{user.gym}</td>
               <td>{user.weight}</td>
               <td>{user.height}</td>
