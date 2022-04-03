@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-export const SignUpForm = () => {
+export const SignUpForm = ({ setOpen }: { setOpen: any }) => {
   const {
     register,
     handleSubmit,
@@ -37,6 +37,10 @@ export const SignUpForm = () => {
     )
   }
 
+  const sleep = (time: number) => {
+    return new Promise(resolve => setTimeout(resolve, time))
+  }
+
   const onSubmit = async (data: any) => {
     data.participant = data.participant === 'yes'
     data.volovanTried = data.volovanTried === 'yes'
@@ -62,6 +66,8 @@ export const SignUpForm = () => {
             closeOnClick: true,
             pauseOnHover: true,
           })
+          await sleep(2000)
+          setOpen(false)
         } else {
           setIsLoading(false)
           toast.error(ErrorMsg(response?.messages), {

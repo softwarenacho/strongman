@@ -34,7 +34,7 @@ export const SignUpModal = ({ open, setOpen }: SignUpModalProps) => {
                   Registrate ahora a StronGames Boca 2022
                 </h3>
                 <>
-                  <SignUpForm />
+                  <SignUpForm setOpen={setOpen} />
                 </>
               </div>
             </div>
