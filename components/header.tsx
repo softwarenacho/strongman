@@ -1,7 +1,7 @@
 import { useCountdown } from '../hooks/useCountdown'
 
 export const Header = () => {
-  const [days, hours, minutes, seconds] = useCountdown('2022/04/20 12:01:00')
+  const [days, hours, minutes, seconds] = useCountdown('2022/04/16 12:01:00')
   return (
     <header>
       <div className=" bg-black p-2 md:p-4 border-b-4 border-strong-blue flex flex-col md:flex-row justify-center items-center md:justify-between">
@@ -17,7 +17,7 @@ export const Header = () => {
             Boca del Rio, Playa Punta Azul
           </h2>
           <h3 className="font-bold text-base md:text-lg text-white">
-            20 de Abril de 2022
+            16 de Abril de 2022
           </h3>
         </div>
         <div className="font-light text-white text-xs md:text-base max-w-logo text-center md:text-right">

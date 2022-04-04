@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Strongman Boca 2022</title>
+        <title>StronGames Boca 2022</title>
         <meta
           name="description"
           content="Participa en el evento Strongman Boca 2022 en Punta Azul en la ciudad de Veracruz"

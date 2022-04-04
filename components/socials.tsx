@@ -6,7 +6,7 @@ export const Socials = () => {
     },
     { src: 'instagram', url: 'https://www.instagram.com/strongamesmx/' },
     // { src: 'tiktok', url: '' },
-    // { src: 'twitter', url: 'https://twitter.com/CanaCovarrubias' },
+    { src: 'twitter', url: 'https://twitter.com/Strongamesmx' },
     {
       src: 'youtube',
       url: 'https://www.youtube.com/channel/UC4Kmv9rzQEvDa0A3jQz3_2g',

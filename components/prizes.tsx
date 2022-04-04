@@ -1,6 +1,6 @@
 export const Prizes = () => {
-  const bigBox = 'w-30 h-40 sm:w-40 sm:h-64 md:w-64 md:h-96'
-  const smallBox = 'w-20 h-30 sm:w-32 sm:h-48 md:w-48 md:h-64'
+  const bigBox = 'w-30 h-36 sm:w-40 sm:h-52 md:w-64 md:h-72'
+  const smallBox = 'w-20 h-30 sm:w-32 sm:h-48 md:w-48 md:h-56'
   const prizes = [
     { src: '/second.png', alt: 'Second', class: smallBox },
     { src: '/first.png', alt: 'First', class: bigBox },
